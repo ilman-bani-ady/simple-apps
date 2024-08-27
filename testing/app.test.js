@@ -27,6 +27,23 @@ describe('Unit Test /app1', () => {
     });
   });
 
+  describe('Unit Test /app3', () => {
+    it('should respond with "Hello App3!"', async () => {
+      const response = await request(app).get('/app2');
+      expect(response.status).toBe(200);
+    });
+  });
+
+  describe('Unit Test /app4', () => {
+    it('should respond with "Hello App4!"', async () => {
+      const response = await request(app).get('/app2');
+      expect(response.status).toBe(200);
+    });
+  });
+
+
+
+
 describe('Integration Test Connect Database', () => {
   beforeEach(() => {
     // Set the connection for the application to use
