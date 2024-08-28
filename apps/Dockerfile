@@ -1,7 +1,6 @@
-FROM node:18.20.4
+FROM ilman666/simple-apps:v.1.02
 WORKDIR /app
 ADD . .
-RUN npm install
 CMD npm start
 
 
