@@ -25,11 +25,12 @@ pipeline {
         }
         stage('Code Review') {
             steps {
-                sonar-scanner \
-                -Dsonar.projectKey=simple-apps \
-                -Dsonar.sources=. \
-                -Dsonar.host.url=http://172.23.10.40:9000 \
-                -Dsonar.token=sqp_f4983448902a29894aab3c848fe329c1587927c7
+                sh '''cd apps
+                sonar-scanner \\
+                -Dsonar.projectKey=simple-apps \\
+                -Dsonar.sources=. \\
+                -Dsonar.host.url=http://172.23.10.40:9000 \\
+                -Dsonar.token=sqp_f4983448902a29894aab3c848fe329c1587927c7'''
             }
         }
         stage('Deploy compose') {
